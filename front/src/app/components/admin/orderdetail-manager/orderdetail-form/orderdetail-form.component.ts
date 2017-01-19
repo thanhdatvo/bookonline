@@ -84,6 +84,7 @@ export class OrderdetailFormComponent implements OnInit {
     this.ok1 = null;
     if(res){
       this.ok1 = res;
+      console.log(JSON.stringify(this.ok1));
     }
   }
   updateListOrder(): void{

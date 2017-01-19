@@ -73,6 +73,14 @@ namespace BookOnline.Controllers
                 return false;
             }
         }
+        [HttpPut]
+        public void ChangePassword(int id, string newPass)
+        {
+            if (!userManager.ChangePassword(id, newPass))
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+        }
     }
 
 }

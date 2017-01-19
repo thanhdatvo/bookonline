@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../classes/user';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import {Subject} from 'rxjs/Subject';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class AuthenticationService implements OnInit {
@@ -17,7 +17,6 @@ export class AuthenticationService implements OnInit {
         this.loggedIn = localStorage.getItem("user") ? true : false;
     }
 
-
     logout() {
         localStorage.removeItem("user");
         localStorage.removeItem("order");
@@ -26,7 +25,7 @@ export class AuthenticationService implements OnInit {
 
     login(user: User, results: User[]) {
         var authenticatedUser = results.find(u => u.Email == user.Email);
-            if (authenticatedUser && authenticatedUser.Password == user.Password) {
+        if (authenticatedUser && authenticatedUser.Password == user.Password) {
             authenticatedUser.JustLogin = true;
             localStorage.setItem("user", JSON.stringify(authenticatedUser));
             console.log("her");
@@ -36,7 +35,7 @@ export class AuthenticationService implements OnInit {
             this.loggedUserSource.next(authenticatedUser);
             return true;
         }
-         return false;
+        return false;
     }
 
     register(model: User) {

@@ -108,8 +108,8 @@ export class BookSearchListComponent implements OnInit {
   }
   searchBooks() {
     if (this.keyword != undefined) this.query.name = this.keyword;
-    this.query.minPrice = Math.floor(this.rangeValues[0] / 1000) + '';
-    this.query.maxPrice = Math.floor(this.rangeValues[1] / 1000) + '';
+    this.query.minPrice = Math.floor(this.rangeValues[0] * 10) + '';
+    this.query.maxPrice = Math.floor(this.rangeValues[1] * 10) + '';
     if (this.rate != undefined) this.query.rate = this.rate + '';
     else { this.query.rate = '' }
     console.log(JSON.stringify(this.selectedTypes));

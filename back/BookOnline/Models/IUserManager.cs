@@ -13,5 +13,6 @@ namespace BookOnline.Models
         User Add(User user);
         void Remove(int id);
         bool Update(User user);
+        bool ChangePassword(int id, string newPass);
     }
 }

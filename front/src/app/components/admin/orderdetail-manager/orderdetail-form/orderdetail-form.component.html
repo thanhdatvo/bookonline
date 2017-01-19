@@ -4,7 +4,7 @@
       <div class="form-group">
         <label for="orderId">OrderID<span style="color: red"> (*)</span></label>
         <select id="orderId" class="form-control" required [(ngModel)]="model.OrderID" name="orderId" #OrderId=ngModel>
-        <option *ngFor="let Order of this.ok" [value]=Order.OrderID>Id:{{Order.OrderID}}</option>
+        <option *ngFor="let Order of ok" [value]=Order.OrderID>Id:{{Order.OrderID}}</option>
       </select>
       <div class="alert alert-danger" [hidden]="OrderId.valid || OrderId.pristine">
         OrderId is required!
@@ -14,7 +14,7 @@
       <div class="form-group">
         <label for="bookId">BookID<span style="color: red"> (*)</span></label>
         <select id="bookId" class="form-control" required [(ngModel)]="model.BookID" name="bookId" #bookId=ngModel>
-        <option *ngFor="let Book of this.ok1" [value]=Book.BookID>Id:{{Book.BookID}} || Tên:{{Book.Name}} || GíaTiền:{{Book.Price}}</option>
+        <option *ngFor="let Book of ok1" [value]=Book.BookID>Id:{{Book.BookID}} || Tên:{{Book.Name}} || GíaTiền:{{Book.Price}}</option>
       </select>
       <div class="alert alert-danger" [hidden]="bookId.valid || bookId.pristine">
         Bookid is required!

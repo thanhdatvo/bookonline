@@ -113,5 +113,18 @@ namespace BookOnline.Models
 
             return true;
         }
+        public bool ChangePassword(int id, string newPass)
+        {
+            using (db = new BookOnlineEntities())
+            {
+                var result = db.Users.SingleOrDefault(u => u.UserID == id);
+                if (result != null)
+                {
+                    result.Password = newPass;
+                    db.SaveChanges();
+                }
+            }
+            return true;
+        }
     }
 }
